@@ -2,14 +2,16 @@ const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
-btn.addEventListener("click", function () {
-  const randomNumber = getRandomNumber();
-  // console.log(randomNumber);
+btn.addEventListener("click", changeColor);
 
-  document.body.style.backgroundColor = colors[randomNumber];
-  color.textContent = colors[randomNumber];
-});
+function changeColor() {
+  const randomIndex = getRandomIndex();
 
-function getRandomNumber() {
+  document.body.style.backgroundColor = colors[randomIndex];
+  color.textContent = colors[randomIndex];
+}
+
+function getRandomIndex() {
   return Math.floor(Math.random() * colors.length);
 }
+
